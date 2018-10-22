@@ -1,0 +1,22 @@
+[user]
+	name = Lauren Hennessy
+	email = lauren.hennessy.work@gmail.com
+[core]
+	editor = "atom -w"
+	excludesfile = ~/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[rerere]
+	enabled = true
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	re = rebase
+	cm = commit
+	go = commit
+	freshness = "!f() { git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:cyan)%(refname:short)%(color:reset) | %(committerdate:relative)%(color:reset) | %(subject)' | column -s '|' -t; }; f"
